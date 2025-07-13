@@ -106,6 +106,8 @@ const quizData = [
 
 let currentQuestion = 0;
 let score = 0;
+const xpPerCorrect = 10; // XP per correct answer
+
 
 $(document).ready(function () {
   loadQuestion();
@@ -147,4 +149,108 @@ function showResult() {
   $('#quiz-box').hide();
   $('#score').text(score);
   $('#result-box').removeClass('hidden');
+
+  const xpEarned = score * xpPerCorrect;
+
+  saveProgress(xpEarned);
+  
+   // Show score + XP
+  $('#score').text(score);
+  $('#result-box').removeClass('hidden');
+
+  // Show XP earned
+  if (!$('#xp-earned').length) {
+    $('#result-box').append(`<p id="xp-earned" class="mt-4 text-lg font-semibold text-purple-700">XP Earned: ${xpEarned}</p>`);
+  } else {
+    $('#xp-earned').text(`XP Earned: ${xpEarned}`);
+  }
+
+  // Show badges
+  displayBadges(score);
+
+  // Update and show leaderboard
+  updateLeaderboard(score);
+  displayLeaderboard();
+}
+
+// Save XP and badges to localStorage
+function saveProgress(xpEarned) {
+  let totalXP = parseInt(localStorage.getItem('totalXP')) || 0;
+  totalXP += xpEarned;
+  localStorage.setItem('totalXP', totalXP);
+
+  // Save badges earned
+  let badges = JSON.parse(localStorage.getItem('badges')) || [];
+  const newBadge = getBadge(score);
+  if (newBadge && !badges.includes(newBadge)) {
+    badges.push(newBadge);
+    localStorage.setItem('badges', JSON.stringify(badges));
+  }
+}
+
+// Determine badge by score
+function getBadge(score) {
+  if (score === maxScore) return 'Quiz Master 🏆';
+  if (score >= 4) return 'Philosophy Pro 🌟';
+  if (score >= 2) return 'Rising Thinker 💡';
+  return null;
+}
+
+function displayBadges(score) {
+  let badges = JSON.parse(localStorage.getItem('badges')) || [];
+  const badgeContainerId = 'badge-container';
+  let container = $(`#${badgeContainerId}`);
+  if (container.length === 0) {
+    $('#result-box').append(`<div id="${badgeContainerId}" class="mt-6 flex justify-center gap-4"></div>`);
+    container = $(`#${badgeContainerId}`);
+  }
+  container.empty();
+
+  if (badges.length === 0) {
+    container.text("No badges earned yet.");
+    return;
+  }
+  
+  badges.forEach(badge => {
+    container.append(`
+      <div class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded font-semibold shadow">
+        ${badge}
+      </div>
+    `);
+  });
+}
+
+// Update leaderboard stored in localStorage
+function updateLeaderboard(score) {
+  let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+
+  // For simplicity, use timestamp as a "user id"
+  const userId = Date.now();
+  leaderboard.push({ id: userId, score: score });
+  // Sort descending by score
+  leaderboard.sort((a, b) => b.score - a.score);
+  // Keep top 5 scores
+  leaderboard = leaderboard.slice(0, 5);
+  localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+}
+
+// Show leaderboard below results
+function displayLeaderboard() {
+  let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+  const leaderboardId = 'leaderboard-container';
+  let container = $(`#${leaderboardId}`);
+
+  if (container.length === 0) {
+    $('#result-box').append(`<div id="${leaderboardId}" class="mt-8 max-w-md mx-auto bg-gray-100 p-4 rounded shadow">
+      <h4 class="text-xl font-bold mb-3 text-center text-gray-700">Leaderboard</h4>
+      <ol id="leaderboard-list" class="list-decimal list-inside text-gray-800"></ol>
+    </div>`);
+    container = $(`#leaderboard-list`);
+  } else {
+    container.empty();
+  }
+
+  leaderboard.forEach((entry, idx) => {
+    container.append(`<li>Score: ${entry.score}/5</li>`);
+  });
 }
