@@ -56,57 +56,70 @@
       <a href="contact.html" class="block py-2 text-gray-700 hover:text-blue-600 mb-2 mr-3">Contact</a>
     </div>
   </nav>
+
   <!-- Main content area -->
   <main class="flex-grow">
     <!-- Quiz Section -->
-   <section class="bg-light py-10 mb-[12em] min-h-[600px] flex flex-col justify-center">
-  <div class="container max-w-3xl mx-auto px-4">
-    <h2 class="text-center text-4xl font-extrabold text-blue-700 mb-6 tracking-wide">
-      Quick Study Quiz
-    </h2>
-    <p class="text-center text-gray-600 text-lg mb-8">
-      Test your Philosophical perspective with our interactive quiz!
-    </p>
+    <section class="bg-light py-10 mb-[12em] min-h-[600px] flex flex-col justify-center">
+      <div class="container max-w-3xl mx-auto px-4">
+        <h2 class="text-center text-4xl font-extrabold text-blue-700 mb-6 tracking-wide">
+          Quick Study Quiz
+        </h2>
+        <p class="text-center text-gray-600 text-lg mb-8">
+          Test your Philosophical perspective with our interactive quiz!
+        </p>
 
-    <div id="quiz-box" class="bg-white p-8 shadow-lg rounded-2xl max-w-3xl mx-auto">
-      <div id="question" class="mb-6 text-xl font-semibold text-gray-800 leading-relaxed">
-        Loading question...
+        <div id="quiz-box" class="bg-white p-8 shadow-lg rounded-2xl max-w-3xl mx-auto">
+          <div id="question" class="mb-6 text-xl font-semibold text-gray-800 leading-relaxed">
+            Loading question...
+          </div>
+          <div id="options" class="flex flex-col space-y-4"></div>
+          <div class="justify-center flex items-center">
+            <button 
+                id="next-btn" 
+                class="btn btn-primary mt-8 sm:w-full py-3 lg:p-9 rounded-xl text-lg font-semibold transition lg:w-auto w-full 
+                    bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled
+            >
+                Next Question
+            </button>
+          </div>
+        </div>
+
+        <div id="result-box" class="bg-white p-8 shadow-lg rounded-2xl max-w-3xl mx-auto mt-8 text-center hidden">
+          <h3 class="text-2xl font-bold text-green-600 mb-4">
+            Your Score: <span id="score"></span>/10
+          </h3>
+
+          <!-- XP Earned placeholder -->
+          <p id="xp-earned" class="mt-4 text-lg font-semibold text-purple-700"></p>
+
+          <!-- Badges placeholder -->
+          <div id="badge-container" class="mt-6 flex justify-center gap-4"></div>
+
+          <!-- Leaderboard placeholder -->
+          <div id="leaderboard-container" class="mt-8 max-w-md mx-auto bg-gray-100 p-4 rounded shadow">
+            <h4 class="text-xl font-bold mb-3 text-center text-gray-700">Leaderboard</h4>
+            <ol id="leaderboard-list" class="list-decimal list-inside text-gray-800"></ol>
+          </div>
+
+          <div class="flex justify-center gap-4 mt-3">
+            <button 
+              class="btn btn-success px-6 py-3 rounded-xl text-lg lg:px-4 lg:py-1 font-semibold bg-green-600 hover:bg-green-700 transition"
+              onclick="location.reload()"
+            >
+              Try Again
+            </button>
+            <a 
+              href="index.html" 
+              class="btn px-6 py-3 rounded-xl text-lg lg:px-4 lg:py-1 font-semibold bg-blue-600 text-white hover:bg-blue-700 transition flex items-center justify-center"
+            >
+              Home
+            </a>
+          </div>
+        </div>
       </div>
-      <div id="options" class="flex flex-col space-y-4"></div>
-      <div class="justify-center flex items-center">
-        <button 
-            id="next-btn" 
-            class="btn btn-primary mt-8 sm:w-full py-3 lg:p-9 rounded-xl text-lg font-semibold transition lg:w-auto w-full 
-                bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled
-        >
-            Next Question
-        </button>
-      </div>
-    </div>
-
-   <div id="result-box" class="bg-white p-8 shadow-lg rounded-2xl max-w-3xl mx-auto mt-8 text-center hidden">
-  <h3 class="text-2xl font-bold text-green-600 mb-4">
-    Your Score: <span id="score"></span>/5
-  </h3>
-  <div class="flex justify-center gap-4 mt-3">
-    <button 
-      class="btn btn-success px-6 py-3 rounded-xl text-lg lg:px-4 lg:py-1 font-semibold bg-green-600 hover:bg-green-700 transition"
-      onclick="location.reload()"
-    >
-      Try Again
-    </button>
-    <a 
-      href="index.html" 
-      class="btn px-6 py-3 rounded-xl text-lg lg:px-4 lg:py-1 font-semibold bg-blue-600 text-white hover:bg-blue-700 transition flex items-center justify-center"
-    >
-      Home
-    </a>
-  </div>
-</div>
-
-</section>
-
+    </section>
   </main>
 
   <!-- Footer -->
@@ -125,6 +138,4 @@
   </footer>
 
 </body>
-
-
 </html>

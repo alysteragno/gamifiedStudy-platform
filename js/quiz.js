@@ -147,30 +147,49 @@ function loadQuestion() {
 
 function showResult() {
   $('#quiz-box').hide();
-  $('#score').text(score);
   $('#result-box').removeClass('hidden');
 
-  const xpEarned = score * xpPerCorrect;
+  // Show score
+  $('#score').text(score);
 
-  saveProgress(xpEarned);
+  // Calculate XP earned (for example, 10 XP per correct answer)
+  const xpEarned = score * 10;
+  $('#xp-earned').text(`You earned ${xpEarned} XP!`);
+
+  // Show badges depending on score
+  const badgeContainer = $('#badge-container');
+  badgeContainer.empty(); // clear previous badges
   
-   // Show score + XP
-  $('#score').text(score);
-  $('#result-box').removeClass('hidden');
-
-  // Show XP earned
-  if (!$('#xp-earned').length) {
-    $('#result-box').append(`<p id="xp-earned" class="mt-4 text-lg font-semibold text-purple-700">XP Earned: ${xpEarned}</p>`);
+  if (score === quizData.length) {
+    badgeContainer.append('<div class="badge bg-yellow-400 px-4 py-2 rounded font-bold">Perfect Score Badge 🏆</div>');
+  } else if (score >= quizData.length / 2) {
+    badgeContainer.append('<div class="badge bg-green-400 px-4 py-2 rounded font-bold">Good Job Badge 👍</div>');
   } else {
-    $('#xp-earned').text(`XP Earned: ${xpEarned}`);
+    badgeContainer.append('<div class="badge bg-gray-400 px-4 py-2 rounded font-bold">Keep Trying Badge 👊</div>');
   }
 
-  // Show badges
-  displayBadges(score);
+  // Example leaderboard data - you can replace this with your real data
+  const leaderboardList = $('#leaderboard-list');
+leaderboardList.empty();
 
-  // Update and show leaderboard
-  updateLeaderboard(score);
-  displayLeaderboard();
+const leaderboard = [
+  { name: 'Alice', score: 9 },
+  { name: 'Bob', score: 8 },
+  { name: 'You', score: score }, // dynamically insert your score
+  { name: 'Carol', score: 5 },
+  { name: 'Dave', score: 4 },
+];
+
+// Sort by score in descending order
+leaderboard.sort((a, b) => b.score - a.score);
+
+// Append sorted leaderboard to the DOM
+leaderboard.forEach((user, index) => {
+  leaderboardList.append(
+    `<li class="mb-2">${index + 1}. <strong>${user.name}</strong>: ${user.score}/10</li>`
+  );
+});
+
 }
 
 // Save XP and badges to localStorage
