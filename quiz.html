@@ -16,7 +16,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!-- Custom JS -->
-  <script defer src="js/quiz.js"></script>
+  <script defer src="quiz.js"></script>
 </head>
 <body class="min-h-screen flex flex-col">
 
@@ -58,7 +58,7 @@
   <!-- Main content area -->
   <main class="flex-grow">
     <!-- Quiz Section -->
-    <section class="bg-light py-5">
+    <section class="bg-light py-5 mb-[12em]">
       <div class="container">
         <h2 class="text-center text-3xl font-bold text-blue-600 mb-4">Quick Study Quiz</h2>
         <p class="text-center text-muted mb-5">Test your knowledge and earn points!</p>
@@ -70,7 +70,7 @@
         </div>
 
         <div id="result-box" class="bg-white p-5 shadow rounded-xl max-w-2xl mx-auto mt-5 text-center d-none">
-          <h3 class="text-xl font-bold text-success">Your Score: <span id="score"></span>/5</h3>
+          <h3 class="text-xl font-bold text-success">Your Score: <span id="score"></span>/10</h3>
           <button class="btn btn-success mt-3" onclick="location.reload()">Try Again</button>
         </div>
       </div>
