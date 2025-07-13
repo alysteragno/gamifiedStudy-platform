@@ -17,6 +17,7 @@
 
   <!-- Custom JS -->
   <script defer src="quiz.js"></script>
+  <script defer src="script.js"></script>
 </head>
 <body class="min-h-screen flex flex-col">
 
@@ -58,23 +59,46 @@
   <!-- Main content area -->
   <main class="flex-grow">
     <!-- Quiz Section -->
-    <section class="bg-light py-5 mb-[12em]">
-      <div class="container">
-        <h2 class="text-center text-3xl font-bold text-blue-600 mb-4">Quick Study Quiz</h2>
-        <p class="text-center text-muted mb-5">Test your knowledge and earn points!</p>
+   <section class="bg-light py-10 mb-[12em] min-h-[600px] flex flex-col justify-center">
+  <div class="container max-w-3xl mx-auto px-4">
+    <h2 class="text-center text-4xl font-extrabold text-blue-700 mb-6 tracking-wide">
+      Quick Study Quiz
+    </h2>
+    <p class="text-center text-gray-600 text-lg mb-8">
+      Test your knowledge and earn points!
+    </p>
 
-        <div id="quiz-box" class="bg-white p-5 shadow rounded-xl max-w-2xl mx-auto">
-          <div id="question" class="mb-4 text-lg font-semibold">Loading question...</div>
-          <div id="options" class="flex flex-col space-y-2"></div>
-          <button id="next-btn" class="btn btn-primary mt-4 w-full" disabled>Next Question</button>
-        </div>
-
-        <div id="result-box" class="bg-white p-5 shadow rounded-xl max-w-2xl mx-auto mt-5 text-center d-none">
-          <h3 class="text-xl font-bold text-success">Your Score: <span id="score"></span>/10</h3>
-          <button class="btn btn-success mt-3" onclick="location.reload()">Try Again</button>
-        </div>
+    <div id="quiz-box" class="bg-white p-8 shadow-lg rounded-2xl max-w-3xl mx-auto">
+      <div id="question" class="mb-6 text-xl font-semibold text-gray-800 leading-relaxed">
+        Loading question...
       </div>
-    </section>
+      <div id="options" class="flex flex-col space-y-4"></div>
+      <div class="justify-center flex items-center">
+        <button 
+            id="next-btn" 
+            class="btn btn-primary mt-8 sm:w-full py-3 lg:p-9 rounded-xl text-lg font-semibold transition lg:w-auto w-full 
+                bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled
+        >
+            Next Question
+        </button>
+      </div>
+    </div>
+
+    <div id="result-box" class="bg-white p-8 shadow-lg rounded-2xl max-w-3xl mx-auto mt-8 text-center hidden">
+      <h3 class="text-2xl font-bold text-green-600 mb-4">
+        Your Score: <span id="score"></span>/10
+      </h3>
+      <button 
+        class="btn btn-success mt-3 px-6 py-3 rounded-xl text-lg font-semibold bg-green-600 hover:bg-green-700 transition"
+        onclick="location.reload()"
+      >
+        Try Again
+      </button>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <!-- Footer -->
