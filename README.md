@@ -1,5 +1,5 @@
 🎮 Gamified Study Platform
-An interactive and engaging web-based learning platform designed to make studying fun through gamification. Users can test their knowledge with dynamic quizzes, earn points, unlock badges, and climb the leaderboard — all within a sleek, responsive interface.
+An interactive and engaging web-based learning platform designed to make studying fun through gamification. Users can test their knowledge with dynamic quizzes, track their study goals and set a timer for studying— all within a sleek, responsive interface.
 
 🚀 Live Demo
 🔗 IN PROGRESS
