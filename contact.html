@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | StudyQuest</title>
+
+  <!-- Bootstrap + Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="#" class="text-primary font-bold text-xl text-blue-600">StudyQuest</a>
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+          <a href="quiz.html" class="text-gray-700 hover:text-blue-600">Quiz</a>
+          <a href="interactive.html" class="text-gray-700 hover:text-blue-600">Interactive</a>
+          <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+          <a href="contact.html" class="text-blue-600 font-semibold">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="flex-grow bg-gray-50 py-12">
+    <div class="container max-w-4xl mx-auto px-6">
+      <h1 class="text-4xl font-bold text-blue-700 mb-6 text-center">Contact & Feedback</h1>
+
+      <!-- Feedback Form -->
+      <form class="bg-white shadow-md rounded-xl p-6 mb-10">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+          <input type="text" id="name" class="form-control w-full" placeholder="Your Name" required />
+        </div>
+
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+          <input type="email" id="email" class="form-control w-full" placeholder="your@email.com" required />
+        </div>
+
+        <div class="mb-4">
+          <label for="message" class="block text-gray-700 font-semibold mb-2">Message / Feedback</label>
+          <textarea id="message" rows="4" class="form-control w-full" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition">
+          Submit
+        </button>
+      </form>
+
+      <!-- Social Media -->
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Follow Me</h2>
+        <div class="flex justify-center space-x-6 text-2xl text-blue-600">
+          <a href="https://facebook.com" target="_blank" class="hover:text-blue-800">
+            <i class="bi bi-facebook"></i> Facebook
+          </a>
+          <a href="https://twitter.com" target="_blank" class="hover:text-blue-800">
+            <i class="bi bi-twitter"></i> Twitter
+          </a>
+          <a href="https://github.com" target="_blank" class="hover:text-blue-800">
+            <i class="bi bi-github"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/alyster-marasigan-9314692ba/" target="_blank" class="hover:text-blue-800">
+            <i class="bi bi-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-xl font-semibold text-gray-800 mb-3">Additional Resources</h3>
+        <ul class="list-disc list-inside text-gray-700">
+          <li><a href="https://philosophyterms.com" class="text-blue-600 hover:underline" target="_blank">PhilosophyTerms.com</a> – Philosophy term glossary</li>
+          <li><a href="https://openstax.org/subjects/humanities" class="text-blue-600 hover:underline" target="_blank">OpenStax Philosophy</a> – Free learning resources</li>
+          <li><a href="https://quizlet.com" class="text-blue-600 hover:underline" target="_blank">Quizlet</a> – Study sets and flashcards</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-4">
+    <div class="container text-center flex flex-col items-center">
+      <p class="mb-0">© 2025 StudyQuest. All rights reserved.</p>
+      <div class="text-sm">
+        Designed and Developed by 
+        <a href="https://alysteragno.netlify.app/" 
+           target="_blank" 
+           class="hover:underline font-bold ">
+           Alyster A.
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Icons (Optional) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</body>
+</html>
