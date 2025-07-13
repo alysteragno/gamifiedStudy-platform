@@ -28,7 +28,7 @@
         <div class="flex items-center">
           <a href="#" class="text-primary font-bold text-xl text-blue-600">StudyQuest</a>
         </div>
-        <div class="hidden md:flex space-x-4">
+        <div class="hidden md:flex space-x-4 lg:space-x-9">
           <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
           <a href="quiz.html" class="text-blue-600 font-semibold">Quiz</a>
           <a href="interactive.html" class="text-gray-700 hover:text-blue-600">Interactive</a>
@@ -65,7 +65,7 @@
       Quick Study Quiz
     </h2>
     <p class="text-center text-gray-600 text-lg mb-8">
-      Test your knowledge and earn points!
+      Test your Philosophical perspective with our interactive quiz!
     </p>
 
     <div id="quiz-box" class="bg-white p-8 shadow-lg rounded-2xl max-w-3xl mx-auto">
@@ -85,18 +85,26 @@
       </div>
     </div>
 
-    <div id="result-box" class="bg-white p-8 shadow-lg rounded-2xl max-w-3xl mx-auto mt-8 text-center hidden">
-      <h3 class="text-2xl font-bold text-green-600 mb-4">
-        Your Score: <span id="score"></span>/10
-      </h3>
-      <button 
-        class="btn btn-success mt-3 px-6 py-3 rounded-xl text-lg font-semibold bg-green-600 hover:bg-green-700 transition"
-        onclick="location.reload()"
-      >
-        Try Again
-      </button>
-    </div>
+   <div id="result-box" class="bg-white p-8 shadow-lg rounded-2xl max-w-3xl mx-auto mt-8 text-center hidden">
+  <h3 class="text-2xl font-bold text-green-600 mb-4">
+    Your Score: <span id="score"></span>/5
+  </h3>
+  <div class="flex justify-center gap-4 mt-3">
+    <button 
+      class="btn btn-success px-6 py-3 rounded-xl text-lg lg:px-4 lg:py-1 font-semibold bg-green-600 hover:bg-green-700 transition"
+      onclick="location.reload()"
+    >
+      Try Again
+    </button>
+    <a 
+      href="index.html" 
+      class="btn px-6 py-3 rounded-xl text-lg lg:px-4 lg:py-1 font-semibold bg-blue-600 text-white hover:bg-blue-700 transition flex items-center justify-center"
+    >
+      Home
+    </a>
   </div>
+</div>
+
 </section>
 
   </main>

@@ -146,5 +146,5 @@ function loadQuestion() {
 function showResult() {
   $('#quiz-box').hide();
   $('#score').text(score);
-  $('#result-box').removeClass('d-none');
+  $('#result-box').removeClass('hidden');
 }
