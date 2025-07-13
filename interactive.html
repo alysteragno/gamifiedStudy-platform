@@ -5,33 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Interactive Tools | StudyQuest</title>
 
-  <!-- Bootstrap + Tailwind -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <!-- Custom JS for this page -->
   <script defer src="js/interactive.js"></script>
   <script defer src="script.js"></script>
 </head>
 <body class="min-h-screen flex flex-col">
 
-  <!-- Navbar -->
   <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
-          <a href="index.html" class="text-primary font-bold text-xl text-blue-600">StudyQuest</a>
+          <a href="#" class="text-primary font-bold text-xl text-blue-600">StudyQuest</a>
         </div>
-        <div class="hidden md:flex space-x-4">
+        <div class="hidden md:flex space-x-4 lg:space-x-9">
           <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-          <a href="quiz.html" class="text-gray-700 hover:text-blue-600">Quiz</a>
-          <a href="interactive.html" class="text-blue-600 font-semibold">Interactive</a>
+          <a href="quiz.html" class="text-blue-600 font-semibold">Quiz</a>
+          <a href="interactive.html" class="text-gray-700 hover:text-blue-600">Interactive</a>
           <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
           <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
         </div>
@@ -50,15 +45,14 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden max-h-0 opacity-0 overflow-hidden px-4 text-lg border-b-5 text-end transition-all duration-700 ease-in-out">
       <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600 mb-2 mr-3">Home</a>
-      <a href="quiz.html" class="block py-2 text-gray-700 hover:text-blue-600 mb-2 mr-3">Quiz</a>
-      <a href="interactive.html" class="block py-2 text-blue-600 font-semibold mb-2 mr-3">Interactive</a>
+      <a href="quiz.html" class="block py-2 text-blue-600 font-semibold mb-2 mr-3">Quiz</a>
+      <a href="interactive.html" class="block py-2 text-gray-700 hover:text-blue-600 mb-2 mr-3">Interactive</a>
       <a href="about.html" class="block py-2 text-gray-700 hover:text-blue-600 mb-2 mr-3">About</a>
       <a href="contact.html" class="block py-2 text-gray-700 hover:text-blue-600 mb-2 mr-3">Contact</a>
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <main class="flex-grow bg-light py-10">
+`  <main class="flex-grow bg-light py-10">
     <div class="container max-w-4xl mx-auto px-4">
 
       <h1 class="text-4xl font-bold text-center text-blue-600 mb-8">Interactive Study Tools</h1>
@@ -71,7 +65,7 @@
         <div class="text-center text-6xl font-mono mb-6" id="timer-display">25:00</div>
 
         <div class="flex justify-center space-x-4">
-          <button id="start-btn" class="btn btn-primary px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition">Start</button>
+          <button id="start-btn" class="btn btn-primary px-6  py-3 rounded-xl font-semibold hover:bg-blue-700 transition">Start</button>
           <button id="pause-btn" class="btn btn-secondary px-6 py-3 rounded-xl font-semibold hover:bg-gray-600 transition" disabled>Pause</button>
           <button id="reset-btn" class="btn btn-outline-primary px-6 py-3 rounded-xl font-semibold hover:bg-blue-100 transition">Reset</button>
         </div>
@@ -88,9 +82,9 @@
             placeholder="Enter a new study goal" 
             required
           />
-          <button type="submit" class="btn btn-primary px-6 py-2 rounded-xl font-semibold hover:bg-blue-700 transition">
+        <button type="submit" class="btn mb-3 btn-primary px-6 py-2 lg:w-[10em] sm:w-[10em] rounded-xl font-semibold hover:bg-blue-700 transition">
             Add Goal
-          </button>
+        </button>
         </form>
         <div id="goal-message" class="text-green-600 my-4 font-medium mt-2 hidden transition-opacity duration-500 opacity-0">Goal submitted!</div>
 
